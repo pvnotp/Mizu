@@ -1,4 +1,5 @@
 :host {
+  --shell-width: min(100vw, calc(100vh / 1.5));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,11 +9,73 @@
   box-sizing: border-box;
 }
 
+.home-shell {
+  width: var(--shell-width);
+  aspect-ratio: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 2.2vmin;
+}
+
+.home-image-frame {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .home-image {
   display: block;
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+}
+
+.hours-block {
+  flex: 0 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 2vmin;
+  display: flex;
+  justify-content: center;
+  font-size: calc(var(--shell-width) * 0.03);
+  line-height: 1.5;
+}
+
+.hours-content {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: max-content;
+}
+
+.hours-title {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.hours-divider {
+  width: 100%;
+  margin: 0.5vmin 0 0.75vmin;
+  border: 0;
+  border-top: 0.1vmin solid currentColor;
+}
+
+.hours-table {
+  width: fit-content;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.hours-table td {
+  padding: 0.18vmin 0.4vmin;
+  text-align: left;
+  vertical-align: top;
+}
+
+.hours-table td:first-child {
+  padding-right: 2em;
 }
