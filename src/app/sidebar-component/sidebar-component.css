@@ -1,0 +1,54 @@
+:host {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 1000;
+	width: 25vw;
+	height: 100vh;
+	background-color: currentColor;
+	box-sizing: border-box;
+}
+
+.sidebar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	padding: 2vmin;
+	box-sizing: border-box;
+	color: #fff;
+	font-size: clamp(0.65rem, 1.3vw, 1.25rem);
+	line-height: 1.7;
+	text-align: center;
+}
+
+.sidebar-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: max-content;
+	max-width: 100%;
+}
+
+.menu-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: max-content;
+}
+
+.sidebar-divider {
+	width: 100%;
+	margin: 0.55em 0;
+	border: 0;
+	border-top: 1px solid currentColor;
+}
+
+.menu-items {
+	position: relative;
+	margin: 0;
+	padding-left: 1em;
+	list-style: disc;
+	text-align: left;
+}
