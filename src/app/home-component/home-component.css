@@ -35,14 +35,24 @@
   object-fit: contain;
 }
 
+.contact-block {
+  flex: 0 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: calc(var(--shell-width) * 0.04);
+  line-height: 1.5;
+}
+
 .hours-block {
   flex: 0 0 auto;
   width: 100%;
   box-sizing: border-box;
   padding-top: 2vmin;
+  padding-bottom: 2vmin;
   display: flex;
   justify-content: center;
-  font-size: calc(var(--shell-width) * 0.05);
+  font-size: calc(var(--shell-width) * 0.04);
   line-height: 1.5;
 }
 
