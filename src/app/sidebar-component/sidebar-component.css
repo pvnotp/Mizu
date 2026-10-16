@@ -5,6 +5,7 @@
 	z-index: 1000;
 	width: 25vw;
 	height: 100vh;
+	height: 100dvh;
 	background-color: #01173e;
 	box-sizing: border-box;
 }

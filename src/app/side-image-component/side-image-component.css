@@ -18,6 +18,7 @@
     z-index: 1000;
     width: 25vw;
     height: 100vh;
+    height: 100dvh;
     pointer-events: none;
   }
 }
