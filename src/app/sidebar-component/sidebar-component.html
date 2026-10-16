@@ -1,3 +1,16 @@
+<button
+	class="menu-toggle"
+	type="button"
+	(click)="toggleMenu()"
+	[attr.aria-expanded]="isOpen"
+	[attr.aria-label]="isOpen ? 'Close menu' : 'Open menu'"
+	aria-controls="site-sidebar"
+>
+	<span aria-hidden="true"></span>
+	<span aria-hidden="true"></span>
+	<span aria-hidden="true"></span>
+</button>
+
 <aside class="sidebar" aria-label="Site information and menu">
 	<div class="sidebar-content">
 		<hr class="sidebar-divider" aria-hidden="true" />

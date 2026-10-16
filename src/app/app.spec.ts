@@ -18,8 +18,10 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
+    const toggle = compiled.querySelector<HTMLButtonElement>('.menu-toggle');
     const sidebar = compiled.querySelector('aside[aria-label="Site information and menu"]');
 
+    expect(toggle?.getAttribute('aria-expanded')).toBe('false');
     expect(sidebar).toBeTruthy();
     expect(sidebar?.querySelector('.sidebar-title')?.textContent).toBe('Menu');
     expect(
@@ -29,13 +31,19 @@ describe('App', () => {
     ).toEqual([
       'Appetizer',
       'Noodles',
-      'Steamed Bao Bun',
-      'Ramen',
+      'Buns',
+      'Soup',
       'Fried Rice',
       'Drinks',
       'Combos',
     ]);
     expect(sidebar?.textContent).toContain('About');
     expect(sidebar?.textContent).toContain('Reviews');
+
+    toggle?.click();
+    fixture.detectChanges();
+    expect(toggle?.getAttribute('aria-expanded')).toBe('true');
+    expect(toggle?.getAttribute('aria-label')).toBe('Close menu');
+    expect(compiled.querySelector('app-sidebar-component')?.classList).toContain('is-open');
   });
 });

@@ -5,7 +5,7 @@
 	z-index: 1000;
 	width: 25vw;
 	height: 100vh;
-	background-color: currentColor;
+	background-color: #01173e;
 	box-sizing: border-box;
 }
 
@@ -17,10 +17,16 @@
 	height: 100%;
 	padding: 2vmin;
 	box-sizing: border-box;
+	background-color: #01173e;
 	color: #fff;
-	font-size: clamp(0.65rem, 1.3vw, 1.25rem);
+	/* Content is ~21.8em tall (plus 5px of borders); 3.4vh keeps it under 80% of the height */
+	font-size: min(1.5rem, 3.4vh);
 	line-height: 1.7;
 	text-align: center;
+}
+
+.menu-toggle {
+	display: none;
 }
 
 .sidebar-content {
@@ -51,4 +57,89 @@
 	padding-left: 1em;
 	list-style: disc;
 	text-align: left;
+	font-size: 0.8em;
+}
+
+@media (max-width: 700px) {
+	:host {
+		width: 0;
+		height: 0;
+		background-color: transparent;
+		pointer-events: none;
+	}
+
+	.sidebar {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 100vw;
+		height: 100vh;
+		height: 100dvh;
+		visibility: hidden;
+		transform: translateX(100%);
+		pointer-events: none;
+		transition:
+			transform 0.25s ease,
+			visibility 0s linear 0.25s;
+	}
+
+	:host(.is-open) .sidebar {
+		visibility: visible;
+		transform: translateX(0);
+		pointer-events: auto;
+		transition:
+			transform 0.25s ease,
+			visibility 0s;
+	}
+
+	.menu-toggle {
+		position: fixed;
+		top: 0.75rem;
+		right: 0.75rem;
+		z-index: 1;
+		display: flex;
+		width: 2.75rem;
+		height: 2.75rem;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 0.35rem;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		color: #01173e;
+		cursor: pointer;
+		pointer-events: auto;
+	}
+
+	.menu-toggle span {
+		width: 1.5rem;
+		height: 2px;
+		border-radius: 1px;
+		background-color: currentColor;
+		transition:
+			transform 0.25s ease,
+			opacity 0.25s ease;
+	}
+
+	:host(.is-open) .menu-toggle {
+		color: #fff;
+	}
+
+	:host(.is-open) .menu-toggle span:first-child {
+		transform: translateY(0.475rem) rotate(45deg);
+	}
+
+	:host(.is-open) .menu-toggle span:nth-child(2) {
+		opacity: 0;
+	}
+
+	:host(.is-open) .menu-toggle span:last-child {
+		transform: translateY(-0.475rem) rotate(-45deg);
+	}
+
+	.menu-toggle:focus-visible {
+		outline: 2px solid currentColor;
+		outline-offset: 3px;
+	}
 }
