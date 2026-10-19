@@ -22,7 +22,7 @@ export const MENU_ITEMS: Record<string, MenuItem[]> = {
 		{ description: 'Seeweed Salad', price: '$5.00' },
 		{ description: 'Edamame', price: '$3.50' },
 		{
-			description: 'Soup Dumpling - Chicken or Pork (4)',
+			description: 'Soup Dumplings (4)',
 			price: '$6.25',
 			options: [{ title: 'Choose one:', items: [{ name: 'Chicken' }, { name: 'Pork' }] }],
 		},
@@ -68,15 +68,7 @@ export const MENU_ITEMS: Record<string, MenuItem[]> = {
 				{
 					title: 'Protien:',
 					items: [{ name: 'Shredded Chicken', price: '$12.50' }, { name: 'Ground Pork', price: '$12.50' }, { name: 'Beef', price: '$14.00' }, { name: 'Vegetable', price: '$12.50' }, ],
-				},
-				{
-					title: 'Sauce:',
-					items: [{ name: 'Classic Chili Sauce', price: ' ' }, { name: 'Soy Vinagrette', price: ' ' }],
-				},
-				{
-					title: 'Protien:',
-					items: [{ name: 'Shredded Chicken' }, { name: 'Ground Pork' }, { name: 'Marinated Beef', price: '+1.00' }, { name: 'Vegetable (Tofu Skin)' }, ],
-				},
+				}
 			],
 		},
 		{
