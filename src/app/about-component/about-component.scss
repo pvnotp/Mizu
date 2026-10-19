@@ -1,0 +1,26 @@
+:host {
+  --app-height: 100vh;
+  --shell-width: min(100vw, calc(var(--app-height) / 1.75));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: var(--app-height);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+@supports (height: 100dvh) {
+  :host {
+    --app-height: 100dvh;
+  }
+}
+
+.about-text {
+  width: 80%;
+  max-width: var(--shell-width);
+  margin: 0;
+  text-align: center;
+  font-size: calc(var(--shell-width) * 0.04);
+  line-height: 1.5;
+}
