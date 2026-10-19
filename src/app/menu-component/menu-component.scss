@@ -63,9 +63,51 @@
   border-top: 1px solid vars.$dark;
 }
 
-// Fills the space between the rule (25vh) and the bottom padding; the sub menu scales its text to fit
+// Same size as the sub menu titles (0.8em of the host font size); the height fits two lines
+$footer-font-size: calc(0.8 * min(1.5rem, 3.4vh));
+$footer-height: calc(0.5rem + 2.24 * min(1.5rem, 3.4vh));
+
+// Fixed footer, kept clear of the side image (left) and sidebar (right) on wide screens
+.menu-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  height: $footer-height;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  column-gap: 0.4em;
+  padding: 0 1rem;
+  background-color: vars.$medium;
+  color: #fff;
+  font-size: $footer-font-size;
+  line-height: 1.4;
+  text-align: center;
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+.no-break {
+  white-space: nowrap;
+}
+
+@media (min-width: 700px) {
+  .menu-footer {
+    left: 25vw;
+    right: 25vw;
+  }
+}
+
+// Fills the space between the rule (25vh) and the footer; the sub menu scales its text to fit
 app-sub-menu-component {
-  height: calc(75dvh - 1.5rem - 0.75 * min(1.5rem, 3.4vh) - 1px);
+  height: calc(75dvh - 1.5rem - 0.75 * min(1.5rem, 3.4vh) - 1px - #{$footer-height});
 }
 
 // The sidebar lists the sub menus whenever it is visible (above 700px), so only the selected title is shown above the rule
@@ -76,7 +118,7 @@ app-sub-menu-component {
   }
 
   app-sub-menu-component {
-    height: calc(90dvh - 1.5rem - 0.75 * min(1.5rem, 3.4vh) - 1px);
+    height: calc(90dvh - 1.5rem - 0.75 * min(1.5rem, 3.4vh) - 1px - #{$footer-height});
   }
 
   .sub-menu-tab:not(.selected),
