@@ -4,7 +4,7 @@
   display: block;
   box-sizing: border-box;
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   margin: 0 auto;
   padding: 0 1rem 1.5rem;
   color: vars.$dark;
@@ -131,5 +131,6 @@ app-sub-menu-component {
 @media (max-width: 375.98px) {
   .sub-menu-tab {
     padding: 0 0.4em;
+    font-size: calc(0.7*min(1.5rem, 3.4vh));
   }
 }
