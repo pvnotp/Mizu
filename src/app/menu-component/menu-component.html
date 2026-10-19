@@ -18,7 +18,11 @@
 
 <hr class="menu-divider" />
 
-<app-sub-menu-component [name]="selected()" />
+<app-sub-menu-component [name]="selected()" (moreBelow)="moreBelow.set($event)" />
+
+@if (moreBelow()) {
+	<div class="scroll-hint" aria-hidden="true"></div>
+}
 
 <footer class="menu-footer">
 	<span>Call to Order: (518) 818-0168</span>
