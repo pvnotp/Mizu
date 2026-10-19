@@ -1,0 +1,93 @@
+@use '../style-variables.scss' as vars;
+
+:host {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem 1.5rem;
+  color: vars.$dark;
+  font-size: min(1.5rem, 3.4vh);
+  line-height: 1.7;
+}
+
+// Keep content clear of the fixed side image (left) and sidebar (right), each 25vw wide
+@media (min-width: 700px) {
+  :host {
+    width: 50vw;
+  }
+}
+
+// Fixed rows: each row stays on one line and rows never share a line
+// Bottom-aligned so the rule below always lands at 25% of the viewport height
+.sub-menu-tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  height: 20vh;
+  height: 20dvh;
+  padding-bottom: 0.5em;
+  overflow: hidden;
+}
+
+// Each row is a single non-wrapping line
+.tab-row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.sub-menu-tab {
+  font: inherit;
+  font-size: 0.8em;
+  color: vars.$dark;
+  background: transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 0.5em;
+  padding: 0 0.8em;
+  cursor: pointer;
+}
+
+.sub-menu-tab.selected {
+  background-color: vars.$medium;
+  color: #fff;
+}
+
+.menu-divider {
+  margin: 0 0 0.75em;
+  border: 0;
+  border-top: 1px solid vars.$dark;
+}
+
+// Fills the space between the rule (25vh) and the bottom padding; the sub menu scales its text to fit
+app-sub-menu-component {
+  height: calc(75dvh - 1.5rem - 0.75 * min(1.5rem, 3.4vh) - 1px);
+}
+
+// The sidebar lists the sub menus whenever it is visible (above 700px), so only the selected title is shown above the rule
+@media (min-width: 701px) {
+  .sub-menu-tabs {
+    height: 15vh;
+    height: 15dvh;
+  }
+
+  app-sub-menu-component {
+    height: calc(90dvh - 1.5rem - 0.75 * min(1.5rem, 3.4vh) - 1px);
+  }
+
+  .sub-menu-tab:not(.selected),
+  .tab-row:not(:has(.selected)) {
+    display: none;
+  }
+}
+
+// Narrow: tighter title padding so each three-title row fits
+@media (max-width: 375.98px) {
+  .sub-menu-tab {
+    padding: 0 0.4em;
+  }
+}

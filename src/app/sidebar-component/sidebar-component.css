@@ -52,6 +52,20 @@
 	border-top: 1px solid currentColor;
 }
 
+.sidebar a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.sidebar a.selected {
+	color: #638abf;
+}
+
+.menu-items li.selected::marker {
+	content: '\25C6  ';
+	color: #638abf;
+}
+
 .menu-items {
 	position: relative;
 	margin: 0;

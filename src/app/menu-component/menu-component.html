@@ -1,0 +1,21 @@
+<nav class="sub-menu-tabs" aria-label="Menu sections">
+	@for (row of tabRows; track $index) {
+		<div class="tab-row">
+			@for (name of row; track name) {
+				<a
+					class="sub-menu-tab"
+					routerLink="/menu"
+					[queryParams]="{ section: name }"
+					[class.selected]="name === selected()"
+					[attr.aria-current]="name === selected() ? 'page' : null"
+				>
+					{{ name }}
+				</a>
+			}
+		</div>
+	}
+</nav>
+
+<hr class="menu-divider" />
+
+<app-sub-menu-component [name]="selected()" />

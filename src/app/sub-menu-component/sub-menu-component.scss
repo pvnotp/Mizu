@@ -1,0 +1,85 @@
+@use '../style-variables.scss' as vars;
+
+:host {
+  display: block;
+  color: vars.$dark;
+  font-size: 0.6em;
+  overflow-y: auto;
+}
+
+.sub-menu-items {
+  list-style: none;
+  margin: 0;
+  padding: 0 0.75em 0 0;
+}
+
+// Custom scrollbar so it stays visible (overlay scrollbars auto-hide)
+:host::-webkit-scrollbar {
+  width: 0.6em;
+}
+
+:host::-webkit-scrollbar-track {
+  background: rgba(vars.$medium, 0.25);
+  border-radius: 0.3em;
+}
+
+:host::-webkit-scrollbar-thumb {
+  background: vars.$medium;
+  border-radius: 0.3em;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  :host {
+    scrollbar-width: thin;
+    scrollbar-color: vars.$medium rgba(vars.$medium, 0.25);
+  }
+}
+
+// No scrollbar (or gap for it) on touch devices; keyed on input type, not window width
+@media (hover: none) and (pointer: coarse) {
+  :host {
+    scrollbar-width: none;
+  }
+
+  :host::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sub-menu-items {
+    padding-right: 0;
+  }
+}
+
+.sub-menu-item {
+  padding: 0.4em 0;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1em;
+}
+
+.option {
+  padding-left: 1em;
+}
+
+.bulleted-title {
+  margin-top: 0.4em;
+}
+
+.option-items {
+  margin: 0;
+  padding-left: 1.2em;
+  list-style: disc;
+}
+
+.item-description {
+  text-align: left;
+}
+
+.item-price {
+  text-align: right;
+  white-space: nowrap;
+}
