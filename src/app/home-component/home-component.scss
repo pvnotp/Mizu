@@ -10,6 +10,7 @@
   height: var(--app-height);
   overflow: hidden;
   box-sizing: border-box;
+  background-color: white;
 }
 
 @supports (height: 100dvh) {

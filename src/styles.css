@@ -10,3 +10,16 @@ body {
   box-sizing: border-box;
 }
 
+@media (max-width: 699px) {
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)),
+      url("/images/ramen.jpg") center / cover no-repeat;
+  }
+}
+
