@@ -20,8 +20,8 @@
 	box-sizing: border-box;
 	background-color: #01173e;
 	color: #fff;
-	/* Content is ~21.8em tall (plus 5px of borders); 3.4vh keeps it under 80% of the height */
-	font-size: min(1.5rem, 3.4vh);
+	/* 80% of the previous size (min(1.5rem, 3.4vh)) to make room for Home and Order Online */
+	font-size: min(1.2rem, 2.72vh);
 	line-height: 1.7;
 	text-align: center;
 }

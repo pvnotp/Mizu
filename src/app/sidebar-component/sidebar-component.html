@@ -13,6 +13,14 @@
 
 <aside class="sidebar" aria-label="Site information and menu">
 	<div class="sidebar-content">
+		<a routerLink="/" (click)="closeMenu()">Home</a>
+		<hr class="sidebar-divider" aria-hidden="true" />
+		<a
+			href="https://www.doordash.com/store/mizu-(asian-restaurant)-rensselaer-52359069"
+			target="_blank"
+			rel="noopener noreferrer"
+			(click)="closeMenu()"
+		>Order Online</a>
 		<hr class="sidebar-divider" aria-hidden="true" />
 		<div class="menu-section">
 			<a
@@ -36,11 +44,21 @@
 		</div>
 
 		<hr class="sidebar-divider" aria-hidden="true" />
-		<div>About</div>
+		<a routerLink="/about" (click)="closeMenu()">About</a>
 		<hr class="sidebar-divider" aria-hidden="true" />
-		<div>Reviews</div>
+		<a
+			href="https://search.google.com/local/reviews?placeid=ChIJg-3qZMrj3YkR76wfJnWPTAI"
+			target="_blank"
+			rel="noopener noreferrer"
+			(click)="closeMenu()"
+		>Reviews</a>
 		<hr class="sidebar-divider" aria-hidden="true" />
-		<div>News</div>
+		<a
+			href="https://www.facebook.com/profile.php?id=61593907749341"
+			target="_blank"
+			rel="noopener noreferrer"
+			(click)="closeMenu()"
+		>News</a>
 		<hr class="sidebar-divider" aria-hidden="true" />
 	</div>
 </aside>
