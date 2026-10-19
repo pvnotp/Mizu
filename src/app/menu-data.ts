@@ -19,7 +19,7 @@ export const MENU_ITEMS: Record<string, MenuItem[]> = {
 		{ description: 'Tako Yaki (6)', price: '$7.50' },
 		{ description: 'Crispy Spring Roll (2)', price: '$3.50' },
 		{ description: 'Crab Rangoon (6)', price: '$7.50' },
-		{ description: 'Seeweed Salad', price: '$5.00' },
+		{ description: 'Seaweed Salad', price: '$5.00' },
 		{ description: 'Edamame', price: '$3.50' },
 		{
 			description: 'Soup Dumplings (4)',
@@ -43,7 +43,7 @@ export const MENU_ITEMS: Record<string, MenuItem[]> = {
 	],
 	'Tossed Noodles': [
 		{
-			description: 'Fresh noodles tossed with your choice of sauce and protien',
+			description: 'Fresh noodles tossed with your choice of sauce and protein',
 			price: '$12.50',
 			options: [
 				{
@@ -55,7 +55,7 @@ export const MENU_ITEMS: Record<string, MenuItem[]> = {
 					items: [{ name: 'Classic Chili Sauce', price: ' ' }, { name: 'Soy Vinagrette', price: ' ' }],
 				},
 				{
-					title: 'Protien:',
+					title: 'Protein:',
 					items: [{ name: 'Shredded Chicken' }, { name: 'Ground Pork' }, { name: 'Marinated Beef', price: '+1.00' }, { name: 'Vegetable (Tofu Skin)' }, ],
 				},
 			],
@@ -66,7 +66,7 @@ export const MENU_ITEMS: Record<string, MenuItem[]> = {
 			description: 'Chilled noodles with a creamy sesame sauce.  Served with cucumber, bean sprouts, carrots, and scallions.  Mild or spicy.',
 			options: [
 				{
-					title: 'Protien:',
+					title: 'Protein:',
 					items: [{ name: 'Shredded Chicken', price: '$12.50' }, { name: 'Ground Pork', price: '$12.50' }, { name: 'Beef', price: '$14.00' }, { name: 'Vegetable', price: '$12.50' }, ],
 				}
 			],
@@ -75,7 +75,7 @@ export const MENU_ITEMS: Record<string, MenuItem[]> = {
 			description: 'Singapore Noodles',
 			options: [
 				{
-					title: 'Protien:',
+					title: 'Protein:',
 					items: [{ name: 'Chicken', price: '$12.50' }, { name: 'Beef', price: '$14.00' }, { name: 'Shrimp', price: '$14.00' }, ],
 				}
 			],
@@ -150,7 +150,7 @@ export const MENU_ITEMS: Record<string, MenuItem[]> = {
 				},
 				{
 					title: 'Toppings (+ $0.99):',
-					items: [ { name: 'Tapioca Pearls', price: ' ' }, { name: 'Strawberry Heart Jelly' }, { name: 'Lychee Jelly' }, { name: 'Strawbetry Popping Pearls' }, { name: 'Passionfruit Popping Pearls' }],
+					items: [ { name: 'Tapioca Pearls', price: ' ' }, { name: 'Strawberry Heart Jelly' }, { name: 'Lychee Jelly' }, { name: 'Strawberry Popping Pearls' }, { name: 'Passionfruit Popping Pearls' }],
 				}
 			],
 		 },
